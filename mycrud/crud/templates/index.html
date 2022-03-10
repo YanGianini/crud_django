@@ -8,12 +8,21 @@
 </head>
 <body>
     <h1>CRUD maneiro do Tassio</h1>
-    {% for produto in produtos %}
     <div>
-        <p>Nome: {{ produto.nome }}</p>
-        <p>Preço: {{ produto.preco }}</p>
-        <p>Validade: {{ produto.validade }}</p>
+        {% block formulario %}
+        <a href="{% url 'cadastro' %}">cadastro</a>
+        {% endblock %}
+        
+        <h2>Lista de produtos: </h2>
+        {% for produto in produtos %}
+        <div>
+            <br><hr>
+            {{produto.id}}
+            <p>Nome: {{ produto.nome }}</p>
+            <p>Preço: {{ produto.preco }}</p>
+            <p>Validade: {{ produto.validade }}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </body>
 </html>

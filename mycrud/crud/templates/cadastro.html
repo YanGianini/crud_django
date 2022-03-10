@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block formulario %}
+    <a href="{% url 'index' %}">index</a>
+
+    <form action="{% url 'cadastro' %}", method="POST">
+        {% csrf_token %}
+        {{ produto_form }}
+
+        <div id="botao_add">
+            <button type="submit">Adicionar Produto</button>
+        </div>  
+    </form>
+{% endblock %}
